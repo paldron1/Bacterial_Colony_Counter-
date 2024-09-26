@@ -10,7 +10,7 @@ st.title("Bacterial Colony Detection Web App")
 st.write("Upload images of petri dishes and detect bacterial colonies using YOLOv8.")
 
 # Load the YOLO model
-model = YOLO('/content/drive/MyDrive/Colab Notebooks/Bacterial_Colony_Counter/detect/train4/weights/best.pt')
+model = YOLO('App/best (1).pt')
 
 # List of classes
 classes = ['artifact', 'bubble', 'colony', 'gate', 'lock', 'sharpie', 'star', 'tape', 'unlock']
