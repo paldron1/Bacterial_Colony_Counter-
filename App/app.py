@@ -1,3 +1,16 @@
+!pip install torch torchvision torchaudio
+!pip install yolov5  # If using YOLOv5 to run inference
+!pip install ultralytics
+import matplotlib.pyplot as plt
+from ultralytics import YOLO
+import cv2
+import torch
+from ultralytics import YOLO
+import time
+
+
+
+
 import streamlit as st
 import matplotlib.pyplot as plt
 from ultralytics import YOLO
