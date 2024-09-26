@@ -1,16 +1,3 @@
-!pip install torch torchvision torchaudio
-!pip install yolov5  # If using YOLOv5 to run inference
-!pip install ultralytics
-import matplotlib.pyplot as plt
-from ultralytics import YOLO
-import cv2
-import torch
-from ultralytics import YOLO
-import time
-
-
-
-
 import streamlit as st
 import matplotlib.pyplot as plt
 from ultralytics import YOLO
@@ -18,9 +5,16 @@ import cv2
 import pandas as pd
 import time
 
-# Set up the Streamlit app title and description
-st.title("Bacterial Colony Detection Web App")
-st.write("Upload images of petri dishes and detect bacterial colonies using YOLOv8.")
+# Display the logo at the top-left corner
+col1, col2 = st.columns([1, 10])
+with col1:
+    st.image("paldron_llc.png", width=100)  # Adjust the width as needed
+
+with col2:
+    st.title("PALDRON: Bacterial Colony Detection Web App")
+
+# Set up a description under the title
+st.write("Upload images of petri dishes and detect bacterial colonies.")
 
 # Load the YOLO model
 model = YOLO('best.pt')
