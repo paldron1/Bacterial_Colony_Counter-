@@ -17,7 +17,7 @@ with col2:
 st.write("Upload images of petri dishes and detect bacterial colonies.")
 
 # Load the YOLO model
-model = YOLO('best.pt')
+model = YOLO('App/best.pt')
 
 # List of classes
 classes = ['artifact', 'bubble', 'colony', 'gate', 'lock', 'sharpie', 'star', 'tape', 'unlock']
