@@ -8,7 +8,7 @@ import time
 # Display the logo at the top-left corner
 col1, col2 = st.columns([1, 10])
 with col1:
-    st.image("paldron_llc.png", width=100)  # Adjust the width as needed
+    st.image("App/paldron_llc.png", width=100)  # Adjust the width as needed
 
 with col2:
     st.title("PALDRON: Bacterial Colony Detection Web App")
