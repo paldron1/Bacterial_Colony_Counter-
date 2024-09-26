@@ -5,8 +5,15 @@ import cv2
 import pandas as pd
 import time
 
-# Set up the Streamlit app title and description
-st.title("PALDRON: Bacterial Colony Detection Web App")
+# Display the logo at the top-left corner
+col1, col2 = st.columns([1, 10])
+with col1:
+    st.image("paldron_llc.png", width=100)  # Adjust the width as needed
+
+with col2:
+    st.title("PALDRON: Bacterial Colony Detection Web App")
+
+# Set up a description under the title
 st.write("Upload images of petri dishes and detect bacterial colonies.")
 
 # Load the YOLO model
@@ -28,7 +35,7 @@ for cls in classes:
 # Allow users to upload multiple images
 uploaded_files = st.file_uploader("Upload Images", accept_multiple_files=True, type=['png', 'jpg', 'jpeg'])
 
-if uploaded_files:  # Check if any files have been uploaded
+if uploaded_files:
     for uploaded_file in uploaded_files:
         file_name = uploaded_file.name
 
@@ -88,4 +95,3 @@ if uploaded_files:  # Check if any files have been uploaded
         file_name=csv_filename,
         mime='text/csv'
     )
-
