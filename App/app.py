@@ -1,4 +1,34 @@
-if uploaded_files:
+import streamlit as st
+import matplotlib.pyplot as plt
+from ultralytics import YOLO
+import cv2
+import pandas as pd
+import time
+
+# Set up the Streamlit app title and description
+st.title("PALDRON: Bacterial Colony Detection Web App")
+st.write("Upload images of petri dishes and detect bacterial colonies.")
+
+# Load the YOLO model
+model = YOLO('best.pt')
+
+# List of classes
+classes = ['artifact', 'bubble', 'colony', 'gate', 'lock', 'sharpie', 'star', 'tape', 'unlock']
+
+# Initialize an empty dictionary to store the results
+detection_data = {
+    "File Name": [],  # Image file name
+    "Timestamp": [],  # Timestamp
+}
+
+# Initialize columns for each class with empty lists
+for cls in classes:
+    detection_data[cls] = []
+
+# Allow users to upload multiple images
+uploaded_files = st.file_uploader("Upload Images", accept_multiple_files=True, type=['png', 'jpg', 'jpeg'])
+
+if uploaded_files:  # Check if any files have been uploaded
     for uploaded_file in uploaded_files:
         file_name = uploaded_file.name
 
